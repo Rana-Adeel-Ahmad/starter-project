@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_weather">
+
+    <fragment
+        android:id="@+id/navigation_weather"
+        android:name="com.app.ui.fragments.weather.WeatherFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.app.ui.fragments.maps.MapsFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_marine"
+        android:name="com.app.ui.fragments.marine.MarineFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="com.app.ui.fragments.earth.EarthEventsFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.app.ui.fragments.setting.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_gallery" />
+
+
+</navigation>

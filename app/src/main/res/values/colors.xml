@@ -11,9 +11,10 @@
     <color name="colorOnSecondary">#FFFFFFFF</color>
     <color name="colorError">#C62828</color>
     <color name="colorBackground">#FAFAFA</color>
+    <color name="colorTransparent">@android:color/transparent</color>
 
     <color name="statusBarColor">#FFFFFF</color>
-    <color name="colorToolbarContent">#FF000000</color>
+    <color name="colorToolbarContent">#FFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimaryAlpha">#66018786</color>
@@ -26,5 +27,10 @@
     <color name="color_outer">#395ED3</color>
     <color name="colorIndicator_indicatorView">@color/colorPrimary</color>
 
+
+    <color name="colorGradientTop">#B1C54F</color>
+    <color name="colorGradientCenter">#86BE8C</color>
+    <color name="colorGradientBottom">#50B3DA</color>
+    <color name="colorDivider">#EEEEEE</color>
 
 </resources>

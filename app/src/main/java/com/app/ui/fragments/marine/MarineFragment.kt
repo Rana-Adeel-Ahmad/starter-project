@@ -7,13 +7,14 @@ import androidx.fragment.app.viewModels
 import com.app.R
 import com.app.databinding.FragmentHomeBinding
 import com.app.bases.BaseFragment
+import com.app.databinding.FragmentMarineBinding
 
-class MarineFragment : BaseFragment<FragmentHomeBinding, MarineViewModel>() {
+class MarineFragment : BaseFragment<FragmentMarineBinding, MarineViewModel>() {
 
     override val viewModel: MarineViewModel by viewModels()
 
-    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentHomeBinding {
-        return FragmentHomeBinding.inflate(inflater, container, false)
+    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentMarineBinding {
+        return FragmentMarineBinding.inflate(inflater, container, false)
     }
 
     override fun getToolbarBinding() = viewBinding.toolbar

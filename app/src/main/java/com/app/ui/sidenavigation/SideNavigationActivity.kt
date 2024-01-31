@@ -2,6 +2,7 @@ package com.app.ui.sidenavigation
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.viewModels
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -15,6 +16,8 @@ import com.app.ui.adapters.MenuItemAdapter
 import com.app.ui.main.MainViewModel
 import com.app.databinding.ActivitySideNavigationBinding
 import com.app.bases.BaseActivity
+import com.app.extention.setStatusBarColor
+import com.app.extention.setTransparentStatusBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,7 +44,6 @@ class SideNavigationActivity : BaseActivity<ActivitySideNavigationBinding, MainV
         adapter = MenuItemAdapter(this, this)
         recycler = viewBinding.drawerLayout.findViewById(R.id.recyclerView)
         recycler.adapter = adapter
-
     }
 
     override fun addViewModelObservers() {
@@ -85,7 +87,6 @@ class SideNavigationActivity : BaseActivity<ActivitySideNavigationBinding, MainV
 
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
 
         when (item.itemId) {
             R.id.navigation_weather -> {

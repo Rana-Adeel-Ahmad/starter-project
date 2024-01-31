@@ -7,13 +7,14 @@ import androidx.fragment.app.viewModels
 import com.app.R
 import com.app.databinding.FragmentHomeBinding
 import com.app.bases.BaseFragment
+import com.app.databinding.FragmentEventsBinding
 
-class EarthEventsFragment : BaseFragment<FragmentHomeBinding, EarthEventsViewModel>() {
+class EarthEventsFragment : BaseFragment<FragmentEventsBinding, EarthEventsViewModel>() {
 
     override val viewModel: EarthEventsViewModel by viewModels()
 
-    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentHomeBinding {
-        return FragmentHomeBinding.inflate(inflater, container, false)
+    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?): FragmentEventsBinding {
+        return FragmentEventsBinding.inflate(inflater, container, false)
     }
 
     override fun getToolbarBinding() = viewBinding.toolbar

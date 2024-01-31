@@ -326,7 +326,7 @@ object NCMUtility {
 
     fun saveMapLayersData(data: MapLayersResponse) {
         try {
-            data.mapLayersResult?.let { model ->
+            data.mapLayersResult.let { model ->
                 model.nwp?.forEach {
                     it.layerType = NcmConstants.LayerType.NWP
                 }

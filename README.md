@@ -1,1 +1,1 @@
-# NCM_android
+# Android Base Starter project

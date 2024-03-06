@@ -5,11 +5,10 @@ import android.content.SharedPreferences
 import android.os.StrictMode
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import com.app.BuildConfig
 import com.app.utils.AppExecutor
 import com.app.bases.BaseApplication
 import com.app.constants.AppConstants
-import com.ncms.module.BuildConfig
-import com.ncms.module.NcmAppCommons
 
 
 /**
@@ -20,7 +19,6 @@ class ApplicationClass : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
         appContext = applicationContext
-        NcmAppCommons.initCommonsSDK(appContext)
 
         AppExecutor.executorService!!.submit {
             if (BuildConfig.DEBUG) {

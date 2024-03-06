@@ -4,7 +4,6 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
     kotlin("kapt")
-
 }
 
 android {
@@ -12,11 +11,12 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.uae.ncms"
+        applicationId = "com.app.chobi"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        resourceConfigurations += listOf("en", "en-rUS", "ar-rAE")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -66,8 +66,8 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.activity:activity-ktx:1.8.2")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 
     // Dagger Hilt
@@ -81,16 +81,14 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     implementation("androidx.security:security-crypto-ktx:1.1.0-alpha06")
 
-    //Android MapBox
-    implementation("com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1")
-    implementation("com.mapbox.mapboxsdk:mapbox-android-plugin-traffic:0.3.0")
-    implementation("com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.11.0")
-    implementation("com.mapbox.mapboxsdk:mapbox-android-plugin-building:0.1.0")
-    implementation("com.mapbox.mapboxsdk:mapbox-android-plugin-geojson:0.1.0")
-    implementation("com.mapbox.mapboxsdk:mapbox-android-ui:2.2.9")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
 
 
-    implementation(project(":NCMCommons"))
+    implementation("com.github.fondesa:kpermissions:3.4.0")
+    implementation("com.github.fondesa:kpermissions-coroutines:3.4.0")
+
 
 }
 

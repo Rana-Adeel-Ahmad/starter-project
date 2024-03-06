@@ -11,7 +11,7 @@ const val DATABASE_NAME = "app-database"
 object AppConstants {
 
     const val IMAGE_DIRECTORY_NAME = "AppDirectory"
-    var SELECTED_MENU_ID: MenuItemModel.MenuID = MenuItemModel.MenuID.WEATHER
+    var SELECTED_MENU_ID: MenuItemModel.MenuID = MenuItemModel.MenuID.HOME
 
 
     const val DISPLAY_DATE = "EEE, dd MMM yyyy"
@@ -25,6 +25,17 @@ object AppConstants {
     object PrefConstants {
         const val APP_PREFS = "APP_PREFS"
         const val APP_LANGUAGE = "APP_LANGUAGE"
+        const val DISPLAY_MAPS_TYPE = "DISPLAY_MAPS_TYPE"
+        const val IS_FROM_MENU = "IS_FROM_MENU"
+        const val IS_CLOUD_ENABLED = "IS_CLOUD_ENABLED"
+        const val CALIBRATE_POPUP_SHOWN = "CALIBRATE_POPUP_SHOWN"
+        const val IS_MAP_FROM_SIDE_MENU = "IS_MAP_FROM_SIDE_MENU"
+        const val WARNINGS_BADGE_COUNT = "WARNINGS_BADGE_COUNT"
+        const val APP_MAP_ACCESS_TOKEN = "APP_MAP_ACCESS_TOKEN"
+        const val APP_MAP_BASE_URL = "APP_MAP_BASE_URL"
+        const val APP_MAP_ICON_BASE_URL = "APP_MAP_ICON_BASE_URL"
+        const val APP_MAP_LAYER_DATA = "APP_MAP_LAYER_DATA"
+        const val APP_MAP_LAYER_DATA_TITLE = "APP_MAP_LAYER_DATA_TITLE"
     }
 
 
@@ -58,8 +69,11 @@ object AppConstants {
     }
 
 
+
     val localeEnglish = Locale("en", "US")
     val localeArabic = Locale("ar", "AE")
+    val ARABIC = "ar-AE"
+    val ENGLISH = "en-US"
 
 
 }

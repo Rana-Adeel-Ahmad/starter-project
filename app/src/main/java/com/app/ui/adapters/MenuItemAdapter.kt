@@ -53,9 +53,9 @@ class MenuItemAdapter(
             binding.tvMenu.text = model.menuText
             val colorID =
                 if (model.menuID == AppConstants.SELECTED_MENU_ID) {
-                    R.color.colorPrimaryAlpha
+                    R.color.colorPrimary
                 } else {
-                    R.color.white
+                    R.color.colorPrimary
                 }
             binding.llRow.setBackgroundColor(ContextCompat.getColor(context, colorID))
 

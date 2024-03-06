@@ -37,6 +37,7 @@
     <dimen name="font_28">28sp</dimen>
 
     <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_40">40dp</dimen>
     <dimen name="margin_36">36dp</dimen>
@@ -81,8 +82,10 @@
     <dimen name="margin_120">120dp</dimen>
     <dimen name="margin_bottom">80dp</dimen>
     <dimen name="margin_top">50dp</dimen>
-    <dimen name="progress_dialog_height_width">100dp</dimen>
+    <dimen name="progress_dialog_height_width">80dp</dimen>
+    <dimen name="map_layer_item">80dp</dimen>
 
     <dimen name="side_margin">20dp</dimen>
 
+    <item name="map_player_width" format="integer" type="dimen">-1</item>
 </resources>

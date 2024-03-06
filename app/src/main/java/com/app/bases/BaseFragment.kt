@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import com.app.R
-import com.app.ui.sidenavigation.SideNavigationActivity
+import com.app.ui.activities.sidenavigation.SideNavigationActivity
 import com.app.databinding.ToolBarLayoutBinding
+import com.app.extention.addStatusBarMargin
 import com.app.utils.TransparentProgressDialog
 
 /**
@@ -34,13 +35,13 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     abstract fun getToolbarTitle(): Int
 
+    abstract fun onViewCreated(savedInstanceState: Bundle?)
+
+    abstract fun addViewsListener()
+
+    abstract fun addViewModelObservers()
+
     abstract fun isMenuButton(): Boolean
-
-    abstract fun setupUI(savedInstanceState: Bundle?)
-
-    abstract fun attachListener()
-
-    abstract fun observeViewModel()
 
 
     var sav: Bundle? = null
@@ -55,9 +56,9 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         toolbar = getToolbarBinding()
         initToolbar()
-        setupUI(savedInstanceState)
-        attachListener()
-        observeViewModel()
+        onViewCreated(savedInstanceState)
+        addViewsListener()
+        addViewModelObservers()
     }
 
 
@@ -73,6 +74,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     private fun initToolbar() {
         toolbar?.let {
+            it.root.addStatusBarMargin()
             with(it) {
                 tvToolbarTitle.text = getString(getToolbarTitle())
                 btnToolbarStart.setImageResource(if (isMenuButton()) R.drawable.ic_menu else R.drawable.ic_back)

@@ -2,30 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_weather"
-        android:icon="@drawable/ic_bottom_weather"
-        
-        android:title="@string/str_weather" />
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_bottom_home"
+        android:title="@string/empty" />
 
     <item
-        android:id="@+id/navigation_maps"
-        android:icon="@drawable/ic_uae_map"
-        android:title="@string/str_maps" />
+        android:id="@+id/navigation_live"
+        android:icon="@drawable/ic_bottom_live"
+        android:title="@string/empty" />
 
     <item
-        android:id="@+id/navigation_marine"
-        android:icon="@drawable/ic_bottom_marine"
-        android:title="@string/str_marine" />
+        android:id="@+id/navigation_video"
+        android:icon="@drawable/ic_bottom_camera"
+        android:title="@string/empty" />
 
     <item
-        android:id="@+id/navigation_events"
-        android:icon="@drawable/ic_bottom_earth_events"
-        android:title="@string/str_earthquakes" />
+        android:id="@+id/navigation_messages"
+        android:icon="@drawable/ic_bottom_chat"
+        android:title="@string/empty" />
 
     <item
-        android:id="@+id/navigation_more"
-        android:icon="@drawable/ic_bottom_more"
-        android:title="@string/str_more" />
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_bottom_user"
+        android:title="@string/empty" />
 
 
 </menu>

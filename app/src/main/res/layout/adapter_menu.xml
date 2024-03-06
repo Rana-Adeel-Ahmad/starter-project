@@ -14,11 +14,12 @@
         android:id="@+id/llRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryAlpha"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/margin_5">
+        android:paddingVertical="@dimen/margin_5"
+        android:paddingHorizontal="@dimen/margin_10"
+        >
 
         <ImageView
             android:id="@+id/ivMenu"

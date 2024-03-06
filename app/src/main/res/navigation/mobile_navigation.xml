@@ -3,37 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_weather">
+    app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/navigation_weather"
-        android:name="com.app.ui.fragments.weather.WeatherFragment"
+        android:id="@+id/navigation_home"
+        android:name="com.app.ui.fragments.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_maps"
-        android:name="com.app.ui.fragments.maps.MapsFragment"
+        android:id="@+id/navigation_live"
+        android:name="com.app.ui.fragments.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_marine"
-        android:name="com.app.ui.fragments.marine.MarineFragment"
+        android:id="@+id/navigation_video"
+        android:name="com.app.ui.fragments.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_events"
-        android:name="com.app.ui.fragments.earth.EarthEventsFragment"
+        android:id="@+id/navigation_messages"
+        android:name="com.app.ui.fragments.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_settings"
-        android:name="com.app.ui.fragments.setting.SettingsFragment"
-        android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/navigation_profile"
+        android:name="com.app.ui.fragments.home.HomeFragment"
+        android:label="@string/menu_settings" />
 
 
 </navigation>

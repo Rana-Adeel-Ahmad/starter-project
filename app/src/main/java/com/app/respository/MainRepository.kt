@@ -17,12 +17,14 @@ class MainRepository @Inject constructor(
 ) :
     BaseRepository() {
 
-  /*  suspend fun callLogin(
-        userName: String,
-        password: String
-    ) = safeApiCall {
-        apiClientInterface.callLogin(userName, password)
-    }*/
+    /*
+    suspend fun callLogin(
+          userName: String,
+          password: String
+      ) = safeApiCall {
+          apiClientInterface.callLogin(userName, password)
+      }
+      */
 
 
 }

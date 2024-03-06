@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Chobi V2</string>
+
+    <string name="action_settings">Settings AR</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="navigation_drawer_open">Open navigation drawer AR</string>
+    <string name="navigation_drawer_close">Close navigation drawer AR</string>
+
+    <string name="menu_home">Home AR</string>
+    <string name="menu_settings">Settings AR</string>
+    <string name="menu_user_profile">User Profile AR</string>
+    <string name="please_check_your_internet_connection">Please check your internet connection. AR</string>
+
+
+    <string name="str_arabic">عربي</string>
+    <string name="str_english">English</string>
+    <string name="empty" />
+    <string name="stroke_range_error" />
+    <string name="space_between_range_error" />
+
+
+</resources>

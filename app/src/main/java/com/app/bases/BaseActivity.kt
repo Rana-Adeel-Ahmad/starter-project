@@ -1,17 +1,14 @@
 package com.app.bases
 
-
-import android.app.Activity
 import android.os.Bundle
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
+import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import com.app.R
+import com.app.constants.AppConstants.ARABIC
+import com.app.constants.AppConstants.ENGLISH
+import com.app.extention.isArabic
 import com.app.extention.setTransparentStatusBar
 import com.app.utils.TransparentProgressDialog
 
@@ -25,25 +22,22 @@ abstract class BaseActivity<VB : ViewBinding, VM : ViewModel> : AppCompatActivit
     protected abstract val viewModel: VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setAppLocale()
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        if (isTransparentStatusBar()) setTransparentStatusBar()
         super.onCreate(savedInstanceState)
-        setStatusBarGradiant(this)
-        viewBinding = initBinding()
+        viewBinding = addViewBinding()
         setContentView(viewBinding.root)
-        initViews(savedInstanceState)
+        onActivityCreate(savedInstanceState)
         addViewModelObservers()
-        attachListens()
+        addViewsListener()
     }
 
-
-    abstract fun initBinding(): VB
-
-    abstract fun initViews(savedInstanceState: Bundle?)
-
+    abstract fun addViewBinding(): VB
+    abstract fun onActivityCreate(savedInstanceState: Bundle?)
+    abstract fun addViewsListener()
     abstract fun addViewModelObservers()
-
-    abstract fun attachListens()
-
+    abstract fun isTransparentStatusBar(): Boolean
 
     fun showProgressDialog() {
         TransparentProgressDialog.showProgressDialog(this)
@@ -53,13 +47,10 @@ abstract class BaseActivity<VB : ViewBinding, VM : ViewModel> : AppCompatActivit
         TransparentProgressDialog.hideProgress()
     }
 
-    private fun setStatusBarGradiant(activity: Activity) {
-        val window: Window = activity.window
-        val background = ContextCompat.getDrawable(activity, R.drawable.gradient_background)
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = ContextCompat.getColor(activity, android.R.color.transparent)
-        window.navigationBarColor = ContextCompat.getColor(activity, android.R.color.white)
-        window.setBackgroundDrawable(background)
+    private fun setAppLocale() {
+        val languageString = if (isArabic()) ARABIC else ENGLISH
+        val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags(languageString)
+        AppCompatDelegate.setApplicationLocales(appLocale)
     }
 
 }

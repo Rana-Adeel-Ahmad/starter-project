@@ -10,13 +10,12 @@
 
     <com.app.utils.NestedProgress
         android:id="@+id/progress_view"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:innerAnimInterpolator="linear"
+        android:layout_width="@dimen/progress_dialog_height_width"
+        android:layout_height="@dimen/progress_dialog_height_width"
+        app:innerAnimInterpolator="overshoot"
         app:innerLoaderColor="@color/color_inner"
-        app:innerLoaderLength="200"
         app:innerLoaderStrokeWidth="3dp"
-        app:outerAnimInterpolator="overshoot"
+        app:outerAnimInterpolator="linear"
         app:outerLoaderAnimDuration="1500"
         app:outerLoaderColor="@color/color_outer"
         app:outerLoaderStrokeWidth="2dp" />

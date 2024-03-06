@@ -6,6 +6,7 @@ import okhttp3.ResponseBody
  * @author Muzzamil Saleem
  */
 sealed class Resource<out T> {
+
     data class Success<out T>(val value: T) : Resource<T>()
 
     data class Failure(

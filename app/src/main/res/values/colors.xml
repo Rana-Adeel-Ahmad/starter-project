@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Buttons Background Color-->
-    <color name="colorPrimary">#395ED3</color>
+    <color name="colorPrimary">#FF000000</color>
     <!--Text Color-->
-    <color name="colorOnPrimary">#FF000000</color>
-    <color name="colorPrimaryVariant">#FF000000</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+    <color name="colorPrimaryVariant">#FFFFFFFF</color>
     <!--Input Views Active State Color-->
     <color name="colorSecondary">#474747</color>
     <color name="colorSecondaryVariant">#474747</color>
     <color name="colorOnSecondary">#FFFFFFFF</color>
     <color name="colorError">#C62828</color>
-    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorBackground">#FF000000</color>
     <color name="colorTransparent">@android:color/transparent</color>
 
     <color name="statusBarColor">#FFFFFF</color>
     <color name="colorToolbarContent">#FFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimaryAlpha">#66018786</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorWhitAlpha">#80FFFFFF</color>
 
     <color name="colorTextTitle">#474747</color>
     <color name="colorTextSubTitle">#474747</color>
 
 
-    <color name="color_inner">#395ED3</color>
-    <color name="color_outer">#395ED3</color>
+    <color name="color_inner">#444B68</color>
+    <color name="color_outer">#3F51B5</color>
     <color name="colorIndicator_indicatorView">@color/colorPrimary</color>
 
 
-    <color name="colorGradientTop">#B1C54F</color>
-    <color name="colorGradientCenter">#86BE8C</color>
-    <color name="colorGradientBottom">#50B3DA</color>
+    <color name="colorGradientTop">#444B68</color>
+    <color name="colorGradientCenter">#444B68</color>
+    <color name="colorGradientBottom">#444B68</color>
     <color name="colorDivider">#EEEEEE</color>
+
+
+    <color name="colorAppBlue">#4F8AFE</color>
+    <color name="colorBlack">#FF000000</color>
+
 
 </resources>

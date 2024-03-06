@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="TransparentProgressDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -52,6 +52,28 @@
     <style name="TextAppearance.Title.Medium">
         <item name="fontFamily">sans-serif-medium</item>
         <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="AppTextWithShadow" parent="TextAppearance.AppCompat">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontWeight" tools:ignore="NewApi">400</item>
+        <item name="android:letterSpacing">0.0</item>
+        <item name="android:lineSpacingExtra">0pt</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1.5</item>
+        <item name="android:shadowDy">1.3</item>
+        <item name="android:shadowRadius">1.6</item>
+
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/up_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/bottom_from_up</item>
+    </style>
+
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
 </resources>

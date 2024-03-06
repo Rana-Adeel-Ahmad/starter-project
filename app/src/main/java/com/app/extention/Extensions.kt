@@ -1,7 +1,6 @@
 package com.app.extention
 
 
-
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -35,6 +34,9 @@ import android.os.Parcelable
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.app.R
+import com.app.utils.AppUtils
+import com.bumptech.glide.Glide
 
 
 fun ViewGroup.inflate(resId: Int): View {
@@ -122,7 +124,7 @@ fun Context.getDefaultPreferences(): SharedPreferences {
 }
 
 fun Any.printLog(key: String, message: String) {
-        Log.d(key, message)
+    Log.d(key, message)
 
 }
 
@@ -217,35 +219,32 @@ inline fun TabLayout.setUpTabLayout(
 }
 
 
-
-
-
 fun Int.isSuccessResponseCode(): Boolean {
     return this == 200
 }
 
-//fun ImageView.loadImageWithGlide(
-//    url: String, placeHolder: Int = AppUtils.getPlaceHolder()
-//) {
-//    try {
-//        Glide
-//            .with(this.context)
-//            .load(url)
-//            .centerCrop()
-//            .placeholder(placeHolder)
-//            .into(this);
-//    } catch (ex: java.lang.Exception) {
-//        try {
-//            this.setImageDrawable(
-//                ContextCompat.getDrawable(
-//                    this.context,
-//                    AppUtils.getErrorPlaceHolder()
-//                )
-//            )
-//        } catch (exx: java.lang.Exception) {
-//        }
-//    }
-//}
+fun ImageView.loadImageWithGlide(
+    url: String, placeHolder: Int = R.drawable.gradient_background
+) {
+    try {
+        Glide
+            .with(this.context)
+            .load(url)
+            .centerCrop()
+            .placeholder(placeHolder)
+            .into(this);
+    } catch (ex: java.lang.Exception) {
+        try {
+            this.setImageDrawable(
+                ContextCompat.getDrawable(
+                    this.context,
+                    placeHolder
+                )
+            )
+        } catch (exx: java.lang.Exception) {
+        }
+    }
+}
 
 fun Double?.setFractions(noOfFractions: Int): String {
     if (this == null) {
@@ -264,7 +263,7 @@ fun Any.printJson(key: String) {
 }
 
 fun Activity.setStatusBarColor(
-     @ColorRes statusBarColor: Int,
+    @ColorRes statusBarColor: Int,
     isDark: Boolean = false
 ) {
     val color = getColor(this, statusBarColor)
@@ -277,32 +276,40 @@ fun Activity.setStatusBarColor(
     }
 }
 
-inline fun AppCompatActivity.setTransparentStatusBar() {
-    this.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-    this.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-    this.window.statusBarColor = Color.TRANSPARENT
-    // this lines ensure only the status-bar to become transparent without affecting the nav-bar
-    window.decorView.systemUiVisibility =
-        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+
+fun AppCompatActivity.setTransparentStatusBar() {
+    try {
+        val background = ContextCompat.getDrawable(this, R.drawable.gradient_background)
+        this.window.apply {
+            clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            statusBarColor = Color.TRANSPARENT
+            setBackgroundDrawable(background)
+        }
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+
 }
-//
-//inline fun <reified T : Parcelable> Intent.parcelable(key: String): T? = when {
-//    SDK_INT >= 33 -> getParcelableExtra(key, T::class.java)
-//    else -> @Suppress("DEPRECATION") getParcelableExtra(key) as? T
-//}
-//
-//inline fun <reified T : Parcelable> Bundle.parcelable(key: String): T? = when {
-//    SDK_INT >= 33 -> getParcelable(key, T::class.java)
-//    else -> @Suppress("DEPRECATION") getParcelable(key) as? T
-//}
-//
-//inline fun <reified T : Parcelable> Bundle.parcelableArrayList(key: String): ArrayList<T>? = when {
-//    SDK_INT >= 33 -> getParcelableArrayList(key, T::class.java)
-//    else -> @Suppress("DEPRECATION") getParcelableArrayList(key)
-//}
-//
-//inline fun <reified T : Parcelable> Intent.parcelableArrayList(key: String): ArrayList<T>? = when {
-//    SDK_INT >= 33 -> getParcelableArrayListExtra(key, T::class.java)
-//    else -> @Suppress("DEPRECATION") getParcelableArrayListExtra(key)
-//}
+
+inline fun <reified T : Parcelable> Intent.parcelable(key: String): T? = when {
+    SDK_INT >= 33 -> getParcelableExtra(key, T::class.java)
+    else -> @Suppress("DEPRECATION") getParcelableExtra(key) as? T
+}
+
+inline fun <reified T : Parcelable> Bundle.parcelable(key: String): T? = when {
+    SDK_INT >= 33 -> getParcelable(key, T::class.java)
+    else -> @Suppress("DEPRECATION") getParcelable(key) as? T
+}
+
+inline fun <reified T : Parcelable> Bundle.parcelableArrayList(key: String): ArrayList<T>? = when {
+    SDK_INT >= 33 -> getParcelableArrayList(key, T::class.java)
+    else -> @Suppress("DEPRECATION") getParcelableArrayList(key)
+}
+
+inline fun <reified T : Parcelable> Intent.parcelableArrayList(key: String): ArrayList<T>? = when {
+    SDK_INT >= 33 -> getParcelableArrayListExtra(key, T::class.java)
+    else -> @Suppress("DEPRECATION") getParcelableArrayListExtra(key)
+}
 
